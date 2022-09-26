@@ -1,0 +1,126 @@
+body{
+    text-align: center;
+    background-color: #121214;
+    color: white;
+}
+input{
+    height: 45px;
+    margin: auto;
+    flex-basis: 15%;
+    border-radius: 10px;
+    padding: 1%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+h1{
+    font-family: 'McLaren', cursive;
+}
+h3{
+    font-size: 240%;
+    color: #87A2FB;
+    /* font-weight:700; */
+    font-family: 'Raleway', sans-serif;
+}
+.detailImg{
+    margin: 5%;
+}
+.detailSide{
+    color: #7b36ce;
+    font-weight: 500;
+}
+
+.button{
+    border: none;
+    background-color: #7b36ce;
+    color: white;
+    width: 90px;
+    height: 45px;
+    border-radius: 10px;
+    margin: auto;
+    font-size: 120%;
+}
+.link{
+    margin: auto;
+    flex-basis: 15%;
+}
+.button:hover{
+    background-color: #40018e;
+}
+.heading{
+    display: flex;
+    background-color: black;
+    padding: 1%;
+}
+h6{
+    padding: 2%;
+}
+img{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+.aImage{
+    border: 2px solid #7b36ce;
+}
+.title{
+    flex-basis: 30%;
+    text-align: left;
+    width: 30%;
+    height: 30%;
+}
+.h{
+    flex-basis: 20%;
+    margin: auto;
+    font-size: 120%;
+}
+.cards{
+    width: 200px;
+    height: 300px;
+    margin: 0.75% auto 10% auto;
+}
+.area{
+    display: flex;
+    margin: 5% auto 0 auto;
+    flex-wrap: wrap;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: #7b36ce;
+}
+a:link{
+    text-decoration: none;
+}
+.a{
+    display: flex;
+}
+.a1{
+    flex-basis: 20%;
+    margin-top: 3%;
+    padding: 2%;
+}
+.a2{
+    flex-basis: 60%;
+    margin-top: 3%;
+    text-align: left;
+    padding: 2%;
+}
+.a3{
+    flex-basis: 20%;
+    text-align: left;
+    padding-top: 20%;
+    background-color: black;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.detailMain{
+    font-size: 125%;
+    color: #E94560;
+    font-weight: 400;
+}
+.areas{
+    display:inline-block;
+    margin: 0.5% 0.5%
+}
