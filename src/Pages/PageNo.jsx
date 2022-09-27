@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import Card from "../Components/Card";
 import Pagination from "../Components/Pagination";
@@ -11,12 +11,11 @@ function PageNo(){
     const [name, setName] = useState("")
     const [totalpages, setTotalpages] = useState([])
     const navigate = useNavigate()
-    const location = useLocation()
-    const [p, setP] = useState(location.state.Page)
-    console.log(location.state)
-    
+    const {pno} = useParams()
+    console.log(pno)
+
     function api(){
-        Axios.get("https://api.jikan.moe/v4/top/anime?page="+p).then(
+        Axios.get("https://api.jikan.moe/v4/top/anime?page="+pno).then(
         (respond) => {
             setData(respond.data.data)
             for(let i=1;i<=respond.data.pagination.last_visible_page/5;i++){
@@ -29,8 +28,8 @@ function PageNo(){
     }
     useEffect(() => {
         api()
-    },[])
-
+    },[useParams()])
+    
     function type(event){
         setName(event.target.value)
     }
@@ -45,10 +44,6 @@ function PageNo(){
             setName("")
             event.preventDefault()   
         }
-    }
-
-    function pageRefresh(){
-            api()
     }
 
     return(
@@ -75,7 +70,10 @@ function PageNo(){
             episodes={m.episodes} year={m.aired.prop.from.year} id={m.mal_id} synopsis={m.synopsis} name={m.title} 
             image={m.images.jpg.image_url}/>):<Loading/>}
             </div>
-            <h5 onChange={pageRefresh}>{location.state.Page}</h5>
+            <h5>{pno}</h5>
+            <div className="area">
+                {totalpages.slice(0,20).map(m => <Pagination page={m.page}/>)}
+            </div>
         </div>
     )
 }
