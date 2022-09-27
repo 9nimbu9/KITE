@@ -6,20 +6,13 @@ function Pagination(props){
     const navigate = useNavigate()
 
     function pageClick(){
-        navigate("/pageNo",{
-            state:{
-                Page: props.page,
-            }
-        })
+        navigate("/pageNo/"+props.page)
     }
-
+    
     return(
         <div className="areas">
             <Link
-            to="/pageNo"
-            state={{
-                Page: props.page,
-            }}>
+            to={"/pageNo/"+props.page}>
             <button className="button" style={{width: "50px"}} onClick={pageClick}>{props.page}</button></Link>
         </div>
     )
